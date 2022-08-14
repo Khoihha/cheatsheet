@@ -1,0 +1,60 @@
++initialize a Git folder
+
++put unstaged into staged
+
++put staged into commit with message
+
++check log
+
++call back staged to unstage
+git restore --staged .
+
++to discard all changes in unstaged (untracking)
+git restore .
+
++to put changes in unstaged into temporarily recycle bin for later recovery
+git stash
++stash management
+-see a list of your stashes: git stash list
+-recovery the latest stash (not remove from stash list): git stash apply 
+-recovery the latest stash (remove from stash list): git stash pop 
+-recovery from a specific stash (not remove from the stash  list: git stash apply stash@{index}
+	example: git stash apply stash@{1}
+-recovery from a specific stash (remove from stash list): git stash pop stash@{index}
+	example: git stash pop stash@{1}
+-drop the latest stash: git stash drop
+-drop a specific stash: git stash drop stash@{index}
+	example: git stash drop stash@{1}
+-drop multiple stashes: open file "stash" in .git/logs/refs/, then delete as many lines as you want, the latest stash is on the top
+-drop all stashes: delete file "stash" in .git/logs/refs/ 
+
++setup a remote connection to github account
+
++change a branch name
+
++push local to cloud
+git push <remote name> <brand name>
+example: git push origin main
+
++rename a remote name
+git remote rename <current name> <new name>
+example: git remote rename origin bin1
+
++remove a remote
+git remote remove <remote name>
+example: git remote remove origin
+
++change url of a remote
+git remote set-url origin new.git.url/here
+
++Manage username and email
+-check current username: git config --global user.name
+-check current email: git config --global user.email
+-change username: git config --global user.name "new username"
+-change email: git config --global user.email "new email"
++Change github credential in windows:
+    -go to window settings, then
+    -find "Credential Manager" in find a setting box
+    -click on "Windows Credentials"
+    -find git:https://github.com
+    -you can Edit or remove this github credential. Once you remove it, git will ask you to input new credential during the time you git push or git pull
